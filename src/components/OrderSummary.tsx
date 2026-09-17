@@ -34,7 +34,7 @@ export const OrderSummary: React.FC<OrderSummaryProps> = ({
         <div className="border-b border-zinc-800 pb-4">
           <h3 className="text-base font-bold text-zinc-100 flex items-center justify-between">
             <span>Ringkasan Transaksi</span>
-            <span className="text-xs font-mono font-normal text-zinc-400 bg-zinc-800 px-2 py-0.5 rounded">
+            <span className="text-[11px] font-mono font-normal text-emerald-400 bg-zinc-950 border border-zinc-800 px-2 py-0.5 rounded">
               SECURE 256-BIT
             </span>
           </h3>
@@ -44,11 +44,11 @@ export const OrderSummary: React.FC<OrderSummaryProps> = ({
         </div>
 
         {/* Selected Items preview */}
-        <div className="bg-zinc-950/50 rounded-xl p-3.5 border border-zinc-800/50 space-y-2 text-xs">
+        <div className="bg-zinc-950/60 rounded-xl p-3.5 border border-zinc-800/60 space-y-2 text-xs">
           <div className="flex justify-between items-center text-zinc-300">
-            <span className="text-zinc-400">Gateway Active:</span>
+            <span className="text-zinc-400">Gateway Provider:</span>
             <span className="font-semibold text-zinc-200">
-              {provider ? `${provider.name} (${provider.badge})` : '-'}
+              {provider ? `${provider.name}` : '-'}
             </span>
           </div>
           <div className="flex justify-between items-center text-zinc-300">
@@ -78,14 +78,14 @@ export const OrderSummary: React.FC<OrderSummaryProps> = ({
 
           <div className="border-t border-zinc-800 pt-3 flex justify-between items-baseline">
             <span className="text-sm font-semibold text-zinc-200">Total Pembayaran</span>
-            <span className="text-2xl font-bold text-emerald-400 tracking-tight">
+            <span className="text-2xl font-bold text-emerald-400 font-mono tracking-tight">
               {formatCurrency(breakdown.totalAmount)}
             </span>
           </div>
         </div>
 
         {errorMessage && (
-          <div className="p-3 bg-red-950/50 border border-red-500/40 rounded-xl text-red-300 text-xs flex items-start gap-2 animate-shake">
+          <div className="p-3 bg-red-950/50 border border-red-500/40 rounded-xl text-red-300 text-xs flex items-start gap-2">
             <span className="text-sm">⚠️</span>
             <span>{errorMessage}</span>
           </div>
@@ -99,13 +99,13 @@ export const OrderSummary: React.FC<OrderSummaryProps> = ({
           disabled={isPayDisabled}
           className={`w-full py-3.5 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all cursor-pointer ${isPayDisabled
               ? 'bg-zinc-800 text-zinc-500 cursor-not-allowed border border-zinc-700/50'
-              : 'bg-gradient-to-r from-indigo-500 via-indigo-600 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white shadow-lg shadow-indigo-500/25 active:scale-[0.98]'
+              : 'bg-emerald-500 hover:bg-emerald-400 text-zinc-950 shadow-lg shadow-emerald-500/15 active:scale-[0.98]'
             }`}
         >
           {isProcessing ? (
             <>
               <svg
-                className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                className="animate-spin -ml-1 mr-2 h-4 w-4 text-zinc-950"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -139,10 +139,9 @@ export const OrderSummary: React.FC<OrderSummaryProps> = ({
           <span>•</span>
           <span>🛡️ PCI-DSS Level 1</span>
           <span>•</span>
-          <span>⚡ Real-time Settlement</span>
+          <span>⚡ Instant Settlement</span>
         </div>
       </div>
     </div>
   );
 };
-

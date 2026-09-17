@@ -72,28 +72,28 @@ export const PaymentStatusTracker: React.FC<PaymentStatusTrackerProps> = ({
     switch (status) {
       case 'success':
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             Berhasil
           </span>
         );
       case 'pending':
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-zinc-800 text-zinc-300 border border-zinc-700">
+            <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-pulse"></span>
             Menunggu
           </span>
         );
       case 'failed':
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-rose-500/15 text-rose-400 border border-rose-500/30">
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-red-950/40 text-red-400 border border-red-500/20">
+            <span className="w-1.5 h-1.5 rounded-full bg-red-400"></span>
             Gagal
           </span>
         );
       default:
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-zinc-700/30 text-zinc-400">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-zinc-800 text-zinc-400">
             {status}
           </span>
         );
@@ -136,7 +136,7 @@ export const PaymentStatusTracker: React.FC<PaymentStatusTrackerProps> = ({
         <button
           type="button"
           onClick={onNavigateToCheckout}
-          className="self-start sm:self-auto px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/20 transition-all flex items-center gap-2 cursor-pointer"
+          className="self-start sm:self-auto px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500 hover:bg-emerald-400 text-zinc-950 shadow-md shadow-emerald-500/10 transition-all flex items-center gap-2 cursor-pointer"
         >
           <span>+ Buat Transaksi Baru</span>
         </button>
@@ -154,7 +154,7 @@ export const PaymentStatusTracker: React.FC<PaymentStatusTrackerProps> = ({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Cari ID Pesanan (cth: ORD-2026...) atau Kode Referensi..."
-              className="w-full bg-zinc-900/90 border border-zinc-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
+              className="w-full bg-zinc-900/90 border border-zinc-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/20 transition-all"
             />
           </div>
 
@@ -185,8 +185,8 @@ export const PaymentStatusTracker: React.FC<PaymentStatusTrackerProps> = ({
                   type="button"
                   onClick={() => setFilterStatus(st)}
                   className={`px-3 py-1 rounded-lg text-xs font-medium border transition-all cursor-pointer ${isSelected
-                      ? 'bg-zinc-800 text-white border-zinc-600 shadow-sm'
-                      : 'bg-zinc-950/60 text-zinc-400 border-zinc-800/80 hover:bg-zinc-900 hover:text-zinc-300'
+                      ? 'bg-emerald-500 text-zinc-950 font-semibold border-emerald-400 shadow-sm'
+                      : 'bg-zinc-900/80 text-zinc-400 border-zinc-800 hover:bg-zinc-800 hover:text-zinc-300'
                     }`}
                 >
                   {labels[st]}
@@ -204,7 +204,7 @@ export const PaymentStatusTracker: React.FC<PaymentStatusTrackerProps> = ({
       {/* Transactions List */}
       {isLoading ? (
         <div className="py-16 text-center space-y-3">
-          <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
           <p className="text-xs text-zinc-400">Memuat riwayat transaksi dari repository...</p>
         </div>
       ) : filteredTransactions.length === 0 ? (
@@ -217,7 +217,7 @@ export const PaymentStatusTracker: React.FC<PaymentStatusTrackerProps> = ({
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="text-xs text-indigo-400 hover:underline pt-1 cursor-pointer"
+              className="text-xs text-emerald-400 hover:underline pt-1 cursor-pointer"
             >
               Reset Kata Kunci Pencarian
             </button>
@@ -267,7 +267,7 @@ export const PaymentStatusTracker: React.FC<PaymentStatusTrackerProps> = ({
                   </div>
                 </div>
 
-                <div className="text-xs text-indigo-400 group-hover:text-indigo-300 flex items-center gap-1 sm:mt-1 font-medium">
+                <div className="text-xs text-emerald-400 group-hover:text-emerald-300 flex items-center gap-1 sm:mt-1 font-medium">
                   <span>Lihat Resi</span>
                   <span>→</span>
                 </div>
@@ -279,4 +279,3 @@ export const PaymentStatusTracker: React.FC<PaymentStatusTrackerProps> = ({
     </div>
   );
 };
-

@@ -1,4 +1,4 @@
-export type PaymentProviderId = 'midtrans' | 'xendit' | 'stripe' | 'doku';
+export type PaymentProviderId = 'midtrans' | 'xendit' | 'stripe' | 'doku' | 'mayar';
 
 export interface PaymentProvider {
   id: PaymentProviderId;

@@ -24,7 +24,7 @@ export const AmountInput: React.FC<AmountInputProps> = ({
         <span className="text-xs text-zinc-400">Min. Rp 10.000</span>
       </div>
 
-      <div className="relative rounded-2xl bg-zinc-900/90 border border-zinc-800 p-2 focus-within:border-indigo-500/80 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+      <div className="relative rounded-2xl bg-zinc-900/90 border border-zinc-800 p-2 focus-within:border-emerald-500/70 focus-within:ring-2 focus-within:ring-emerald-500/20 transition-all">
         <div className="flex items-center px-3 py-1.5">
           <span className="text-zinc-400 text-lg font-bold select-none pr-3 border-r border-zinc-800">
             IDR
@@ -35,7 +35,7 @@ export const AmountInput: React.FC<AmountInputProps> = ({
             value={formattedAmount}
             onChange={(e) => onAmountChange(e.target.value)}
             placeholder="0"
-            className="w-full bg-transparent text-2xl font-bold text-zinc-100 pl-3 focus:outline-none placeholder-zinc-600"
+            className="w-full bg-transparent text-2xl font-bold text-zinc-100 pl-3 focus:outline-none placeholder-zinc-600 tracking-tight"
           />
         </div>
       </div>
@@ -56,7 +56,7 @@ export const AmountInput: React.FC<AmountInputProps> = ({
               type="button"
               onClick={() => onSelectPreset(amt)}
               className={`px-3 py-1 rounded-lg text-xs font-medium border transition-all cursor-pointer ${isSelected
-                  ? 'bg-indigo-600 text-white border-indigo-500 shadow-sm'
+                  ? 'bg-emerald-500 text-zinc-950 font-bold border-emerald-400 shadow-sm'
                   : 'bg-zinc-800/80 text-zinc-300 border-zinc-700 hover:bg-zinc-700 hover:text-white'
                 }`}
             >
@@ -68,4 +68,3 @@ export const AmountInput: React.FC<AmountInputProps> = ({
     </div>
   );
 };
-

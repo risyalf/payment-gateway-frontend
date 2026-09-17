@@ -70,7 +70,7 @@ export const PaymentStatusView: React.FC<PaymentStatusViewProps> = ({
         <div className="p-4 rounded-2xl bg-zinc-950 border border-zinc-800 text-center space-y-2">
           <div className="text-xs text-zinc-400">Nomor Virtual Account {result.method.name}:</div>
           <div className="flex items-center justify-center gap-3">
-            <span className="text-xl font-mono font-bold text-indigo-400 tracking-wider">
+            <span className="text-xl font-mono font-bold text-emerald-400 tracking-wider">
               {result.virtualAccountNumber}
             </span>
             <button
@@ -152,7 +152,7 @@ export const PaymentStatusView: React.FC<PaymentStatusViewProps> = ({
         <button
           type="button"
           onClick={onBackToHome}
-          className="w-full py-3 px-4 rounded-xl font-semibold text-xs sm:text-sm bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 transition-all cursor-pointer"
+          className="w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm bg-emerald-500 hover:bg-emerald-400 text-zinc-950 shadow-md shadow-emerald-500/20 flex items-center justify-center gap-2 transition-all cursor-pointer"
         >
           <span>Kembali ke Beranda</span>
           <span>↺</span>
@@ -161,4 +161,3 @@ export const PaymentStatusView: React.FC<PaymentStatusViewProps> = ({
     </div>
   );
 };
-

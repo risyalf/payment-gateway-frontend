@@ -30,31 +30,13 @@ export interface IPaymentRepository {
 export class MockPaymentRepository implements IPaymentRepository {
   private mockProviders: PaymentProvider[] = [
     {
-      id: 'midtrans',
-      name: 'Midtrans Snap',
-      tagline: 'Solusi payment terlengkap di Indonesia',
-      badge: 'Lokal Pilihan',
+      id: 'mayar',
+      name: 'Mayar',
+      tagline: 'Payment link & invoice otomatis',
+      badge: 'Mayar Official',
       feePercentage: 1.5,
       fixedFee: 2000,
-      logo: '🇮🇩',
-    },
-    {
-      id: 'xendit',
-      name: 'Xendit Gateway',
-      tagline: 'Infrastruktur pembayaran digital Asia Tenggara',
-      badge: 'Enterprise',
-      feePercentage: 1.8,
-      fixedFee: 1500,
       logo: '⚡',
-    },
-    {
-      id: 'stripe',
-      name: 'Stripe Global',
-      tagline: 'Standar transaksi internasional & multicurrency',
-      badge: 'Global',
-      feePercentage: 2.9,
-      fixedFee: 3000,
-      logo: '🌍',
     },
   ];
 

@@ -30,14 +30,14 @@ export const PaymentMethodSelector: React.FC<PaymentMethodSelectorProps> = ({
               key={method.id}
               onClick={() => onSelectMethod(method)}
               className={`group flex items-center justify-between p-3.5 rounded-xl border transition-all duration-150 cursor-pointer ${isSelected
-                  ? 'bg-zinc-800/90 border-indigo-500 shadow-md ring-1 ring-indigo-500/50'
+                  ? 'bg-zinc-800/80 border-emerald-500/80 shadow-md ring-1 ring-emerald-500/20'
                   : 'bg-zinc-900/40 border-zinc-800/90 hover:border-zinc-700 hover:bg-zinc-900/80'
                 }`}
             >
               <div className="flex items-center gap-3.5">
                 <div
                   className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl border transition-all ${isSelected
-                      ? 'bg-indigo-600/20 border-indigo-500/40'
+                      ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
                       : 'bg-zinc-800 border-zinc-700/60 group-hover:border-zinc-600'
                     }`}
                 >
@@ -65,11 +65,11 @@ export const PaymentMethodSelector: React.FC<PaymentMethodSelectorProps> = ({
                 {/* Radio Indicator */}
                 <div
                   className={`w-5 h-5 rounded-full border flex items-center justify-center transition-all ${isSelected
-                      ? 'border-indigo-500 bg-indigo-600 ring-2 ring-indigo-500/20'
+                      ? 'border-emerald-500 bg-emerald-500 ring-2 ring-emerald-500/20'
                       : 'border-zinc-700 bg-zinc-800 group-hover:border-zinc-600'
                     }`}
                 >
-                  {isSelected && <div className="w-2 h-2 rounded-full bg-white"></div>}
+                  {isSelected && <div className="w-2 h-2 rounded-full bg-zinc-950"></div>}
                 </div>
               </div>
             </div>
@@ -79,4 +79,3 @@ export const PaymentMethodSelector: React.FC<PaymentMethodSelectorProps> = ({
     </div>
   );
 };
-
